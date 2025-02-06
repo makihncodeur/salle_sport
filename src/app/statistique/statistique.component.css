@@ -1,0 +1,22 @@
+/* Ajoutez des styles personnalisés ici */
+.card {
+  margin-bottom: 20px;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1.5rem;
+  color: #007bff;
+}
+.card-header {
+  background-color: #1e3a8a ;  /* Remplace cette couleur par celle de ta navbar */
+  color: white !important;
+}

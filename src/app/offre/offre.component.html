@@ -1,0 +1,75 @@
+<div class="container mt-4">
+  <h2 class="mb-4 text-center"><i class="fas fa-tags me-2"></i> Gestion des Offres</h2>
+
+  <!-- Formulaire pour ajouter/modifier une offre -->
+  <div class="card shadow border-0">
+    <div class="card-header">
+      <h5 class="mb-0"><i class="fas fa-plus-circle me-2"></i> {{ isEditing ? 'Modifier l\'offre' : 'Ajouter une offre' }}</h5>
+    </div>
+    <div class="card-body">
+      <form *ngIf="offerForm" [formGroup]="offerForm" (ngSubmit)="addOrUpdateOffer()">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label"><i class="fas fa-tag me-1"></i> Nom de l'offre</label>
+            <input type="text" formControlName="offerName" class="form-control" placeholder="Nom de l'offre" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label"><i class="fas fa-clock me-1"></i> Durée (mois)</label>
+            <input type="number" formControlName="durationMonths" class="form-control" placeholder="Durée (mois)" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label"><i class="fas fa-money-bill-wave me-1"></i> Prix mensuel (FCFA)</label>
+            <input type="number" formControlName="monthlyPrice" class="form-control" placeholder="Prix mensuel (FCFA)" required>
+          </div>
+        </div>
+        <div class="mt-3 d-md-flex justify-content-md-end gap-3">
+          <button type="submit" class="btn btn-success">
+            <i class="fas fa-save me-1"></i> {{ isEditing ? 'Modifier' : 'Ajouter' }}
+          </button>
+          <button type="button" class="btn btn-secondary" (click)="resetForm()">
+            <i class="fas fa-times me-1"></i> Annuler
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Tableau des offres -->
+  <h3 class="mt-5"><i class="fas fa-list me-2"></i> Liste des Offres</h3>
+  <div class="card shadow border-0">
+    <div class="card-header bg-dark text-white">
+      <h5 class="mb-0"><i class="fas fa-box me-2"></i> Offres disponibles</h5>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table">
+          <thead class="text-center">
+            <tr class="bg-light text-dark">
+              <th><i class="fas fa-hashtag me-1"></i> ID</th>
+              <th><i class="fas fa-tag me-1"></i> Nom de l'offre</th>
+              <th><i class="fas fa-clock me-1"></i> Durée (mois)</th>
+              <th><i class="fas fa-money-bill-wave me-1"></i> Prix mensuel (FCFA)</th>
+              <th><i class="fas fa-cogs me-1"></i> Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let offer of offers" class="text-center">
+              <td>{{ offer.id }}</td>
+              <td>{{ offer. offerName }}</td>
+              <td>{{ offer.durationMonths }}</td>
+              <td>{{ offer.monthlyPrice }} FCFA</td>
+              <td>
+                <button class="btn btn-warning btn-sm me-2" (click)="editOffer(offer)">
+                  <i class="fas fa-edit me-1"></i>
+                </button>
+                <button class="btn btn-danger btn-sm" (click)="deleteOffer(offer.id)">
+                  <i class="fas fa-trash-alt me-1"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

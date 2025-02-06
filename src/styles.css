@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+#main {
+  margin-top: 60px;
+  padding: 20px 30px;
+  transition: all 0.3s;
+}
+#sidebar {
+  background-color: #1e3a8a; /* Light gray background */
+  color: #1f2937; /* Dark gray text */
+  width: 270px; /* Fixed sidebar width */
+  height: 100vh; /* Full height */
+  display: flex;
+    flex-direction: column;
+  transition: all 0.3s ease; /* Smooth transition for hover and active states */
+
+}
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  #sidebar {
+    display: none;
+  }
+
+  #sidebar.open {
+    display: flex;
+  }
+}
+@media (max-width: 1199px) {
+  #main {
+    padding: 20px;
+  }
+}

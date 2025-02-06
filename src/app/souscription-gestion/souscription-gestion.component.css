@@ -1,0 +1,27 @@
+/* Ajoutez des styles personnalisés ici */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card-header {
+  background-color: #1e3a8a ;  /* Remplace cette couleur par celle de ta navbar */
+  color: white !important;
+}
+.btn-close {
+  position: absolute; /* Permet de le positionner à une position spécifique */
+  top: 10px; /* Ajustez la distance du bord supérieur */
+  right: 10px;
+  color: white;
+   /* Ajustez la distance du bord droit */
+}
+
+table {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btn-sm {
+  margin-right: 5px;
+}

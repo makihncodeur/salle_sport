@@ -1,0 +1,13 @@
+.input-smaller {
+  height: 40px;
+  font-size: 14px;
+}
+
+.card {
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+.card-header {
+  border-radius: 10px 10px 0 0;
+}

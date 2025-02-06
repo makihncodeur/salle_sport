@@ -1,0 +1,98 @@
+<div class="container">
+  <h2 class="mb-4 text-center"><i class="fas fa-users-cog me-2"></i>Gestion des Abonnements</h2>
+
+  <!-- Formulaire pour souscrire un client à une offre -->
+  <div class="card shadow border-0">
+    <div  class="card-header">
+      <h5 class="mb-0"><i class="fas fa-user-plus me-2"></i> Souscrire un Client</h5>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="subscriptionForm" (ngSubmit)="subscribeClient(); $event.preventDefault()">
+        <div class="row g-3">
+          <div class="col-md-4">
+            <label class="form-label"><i class="fas fa-user me-1"></i> Sélectionner un client</label>
+            <select formControlName="clientId" class="form-control" required>
+              <option value="">Sélectionner un client</option>
+              <option *ngFor="let client of clients" [value]="client.id">
+                {{ client.lastName }} {{ client.firstName }}
+              </option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label"><i class="fas fa-box me-1"></i> Sélectionner une offre</label>
+            <select formControlName="offerId" class="form-control" required>
+              <option value="">Sélectionner une offre</option>
+              <option *ngFor="let offer of offers" [value]="offer.id">
+                {{ offer.offerName }} ({{ offer. monthlyPrice }} FCFA/mois)
+              </option>
+            </select>
+          </div>
+          <div class="col-md-4 d-flex align-items-end">
+            <button type="submit" class="btn btn-success w-100" [disabled]="subscriptionForm.invalid">
+              <i class="fas fa-check-circle me-2"></i>Souscrire
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Liste des clients avec leurs abonnements -->
+  <h3 class="mt-5"><i class="fas fa-list me-2"></i>Liste des Clients et Offres</h3>
+  <div class="table-responsive">
+    <table class="table table-striped table-hover shadow-sm">
+      <thead class="table-dark">
+        <tr>
+          <th><i class="fas fa-user me-1"></i> Nom</th>
+          <th><i class="fas fa-user me-1"></i> Prénom</th>
+          <th><i class="fas fa-toggle-on me-1"></i> Abonnement Actif</th>
+          <th><i class="fas fa-box-open me-1"></i> Offre d'Abonnement</th>
+          <th><i class="fas fa-cogs me-1"></i> Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let client of clients" (click)="selectClient(client)" class="align-middle" style="cursor: pointer;">
+          <td>{{ client.lastName }}</td>
+          <td>{{ client.firstName }}</td>
+          <td>
+            <span class="badge" [ngClass]="{'bg-success': client.activeSubscription, 'bg-danger': !client.activeSubscription}">
+              {{ client.activeSubscription ? 'Oui' : 'Non' }}
+            </span>
+          </td>
+          <td>
+            <span *ngIf="client.offreAbonnement">
+              {{ client.offreAbonnement.offerName }} ({{ client.offreAbonnement. monthlyPrice }} FCFA/mois)
+            </span>
+            <span *ngIf="!client.offreAbonnement">Aucune offre</span>
+          </td>
+          <td>
+            <button *ngIf="client.activeSubscription" class="btn btn-danger btn-sm" (click)="cancelSubscription(client.id)">
+              <i class="fas fa-times-circle me-1"></i>Résilier
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Détails du client sélectionné -->
+  <div *ngIf="selectedClient" class="card shadow border-0 mt-4">
+    <div class="card-header">
+      <h5 class="mb-0"><i class="fas fa-user-tag me-2"></i>Détails du Client</h5>
+      <button type="button" class="btn-close bg-white" aria-label="Close" (click)="closeDetails()"></button>
+    </div>
+    <div class="card-body">
+      <p><strong><i class="fas fa-user me-1"></i> Nom & Prenom :</strong> {{ selectedClient.lastName }} {{ selectedClient.firstName}}</p>
+      <p><strong><i class="fas fa-calendar-alt me-1"></i> Date d'Inscription :</strong> {{ formatDate(selectedClient.registrationDate) }}</p>
+      <p><strong><i class="fas fa-toggle-on me-1"></i> Abonnement Actif :</strong>
+        <span class="badge" [ngClass]="{'bg-success': selectedClient.activeSubscription, 'bg-danger': !selectedClient.activeSubscription}">
+          {{ selectedClient.activeSubscription ? 'Oui' : 'Non' }}
+        </span>
+      </p>
+      <p *ngIf="selectedClient.offreAbonnement">
+        <strong><i class="fas fa-box me-1"></i> Offre d'Abonnement :</strong>
+        {{ selectedClient.offreAbonnement.offerName }} ({{ selectedClient.offreAbonnement.monthlyPrice}} FCFA/mois)
+      </p>
+    </div>
+  </div>
+</div>

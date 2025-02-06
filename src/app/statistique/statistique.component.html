@@ -1,0 +1,49 @@
+<div class="container">
+  <h2 class="mb-4 text-center"><i class="fas fa-chart-line me-2"></i>Statistiques</h2>
+
+  <!-- Statistiques -->
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <div class="card shadow border-0 text-center">
+        <div class="card-body">
+          <h5 class="card-title"><i class="fas fa-users me-2 text-primary"></i> Clients Actifs</h5>
+          <p class="card-text display-5 fw-bold text-success">{{ totalActiveClients }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card shadow border-0 text-center">
+        <div class="card-body">
+          <h5 class="card-title"><i class="fas fa-dollar-sign me-2 text-warning"></i> Chiffre d'Affaires Mensuel</h5>
+          <p class="card-text display-5 fw-bold text-danger">{{ estimatedMonthlyRevenue }} FCFA</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Export des abonnements -->
+  <div class="card shadow border-0">
+    <div  class="card-header">
+      <h5 class="mb-0"><i class="fas fa-file-export me-2"></i>Exporter les Abonnements</h5>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="exportSubscriptions()">
+        <div class="row">
+          <div class="col-md-4">
+            <label for="startDate" class="form-label"><i class="fas fa-calendar-alt me-1"></i> Date de début</label>
+            <input type="date" id="startDate" [(ngModel)]="startDate" name="startDate" class="form-control" required>
+          </div>
+          <div class="col-md-4">
+            <label for="endDate" class="form-label"><i class="fas fa-calendar-check me-1"></i> Date de fin</label>
+            <input type="date" id="endDate" [(ngModel)]="endDate" name="endDate" class="form-control" required>
+          </div>
+          <div class="col-md-4 d-flex align-items-end">
+            <button type="submit" class="btn btn-success w-100">
+              <i class="fas fa-download me-2"></i>Exporter
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

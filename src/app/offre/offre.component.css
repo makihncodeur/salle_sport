@@ -1,0 +1,104 @@
+/* Style global */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.card-header {
+  background-color: #1e3a8a ;  /* Remplace cette couleur par celle de ta navbar */
+  color: white !important;
+}
+/* Formulaire et tableau */
+.form-container, .table-container, .search-container {
+  margin-bottom: 30px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+/* Formulaire (Nom, Prénom sur la même ligne) */
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.form-group {
+  width: 48%; /* Chaque champ prend presque la moitié de la largeur */
+}
+
+/* Champ de recherche */
+.search-container {
+  width: 30%;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-container .form-control {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Tableau */
+.table-container {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+}
+
+.table th, .table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #f2f2f2;
+}
+
+.table-bordered {
+  border: 2px solid #ddd;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+/* Boutons */
+.btn {
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+}
+
+.btn-sm {
+  padding: 5px 10px;
+}
+/* Pour aligner mieux les boutons radio */
+.form-check-inline {
+  margin-right: 15px;
+}
+
+.form-check-label {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.form-check-input {
+  margin-right: 5px;
+}
+
+

@@ -1,0 +1,86 @@
+/* 🌟 Sidebar Styles */
+#sidebar {
+  background-color: #1e3a8a; /* Light gray background */
+  color: #1f2937; /* Dark gray text */
+  width: 270px; /* Fixed sidebar width */
+  height: 100vh; /* Full height */
+
+  display: flex;
+    flex-direction: column;
+  transition: all 0.3s ease; /* Smooth transition for hover and active states */
+
+}
+
+/* 📝 Sidebar Menu */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  margin-top: 78px;
+}
+
+.nav-item {
+  margin-bottom: 10px; /* Space between items */
+}
+
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #1f2937;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.sidebar-link:hover {
+  background-color: #3b82f6; /* Blue background on hover */
+  color: white; /* White text on hover */
+}
+
+.sidebar-link.active {
+  background-color: #3b82f6; /* Blue background when active */
+  color: white; /* White text when active */
+}
+
+/* 🖼️ Sidebar Icons */
+.icon {
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+/* 📜 Menu Text */
+.menu-text {
+  white-space: nowrap;
+  color: white;
+  font-size: 20px;
+}
+
+/* Taille des icônes */
+.mat-icon {
+  font-size: 24px;  /* Ajuste la taille des icônes */
+  margin-right: 10px;  /* Espace entre l'icône et le texte */
+}
+
+/* Changer la couleur des icônes */
+.sidebar-link mat-icon {
+  color: white; /* Icônes en bleu */
+}
+
+/* Effet au survol */
+.sidebar-link:hover mat-icon {
+  color: white;  /* Couleur au survol */
+}
+
+
+
+@media (max-width: 768px) {
+  #sidebar {
+    display: none;
+  }
+
+
+}
