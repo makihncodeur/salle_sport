@@ -40,7 +40,7 @@ export class ClientComponent implements OnInit {
 
   loadClients() {
     this.clientService.getClients().subscribe((clients) => {
-      console.log("🔄 Clients chargés :", clients);
+      
       this.clients = clients;
 
      });

@@ -18,18 +18,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   transition: all 0.3s ease; /* Smooth transition for hover and active states */
 
 }
-@media (max-width: 768px) {
-  .main-container {
-    flex-direction: column;
-  }
+.sidebar {
+  width: 250px;
+  transition: transform 0.3s ease-in-out;
+}
 
-  #sidebar {
-    display: none;
-  }
-
-  #sidebar.open {
-    display: flex;
-  }
+.sidebar.hidden {
+  transform: translateX(-100%);
 }
 @media (max-width: 1199px) {
   #main {

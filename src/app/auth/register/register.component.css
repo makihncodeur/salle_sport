@@ -1,13 +1,91 @@
-.input-smaller {
-  height: 40px;
-  font-size: 14px;
+/* Image de fond en plein écran */
+.register-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url('/assets/salle.webp') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.card {
-  max-width: 400px;
+/* Effet sombre sur l'image */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Ajuste l’opacité */
+}
+
+/* Carte d'inscription avec effet de flou */
+.register-card {
+  position: relative;
+  width: 450px;
+  padding: 30px;
   border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2); /* Effet transparent */
+  backdrop-filter: blur(10px); /* Effet de flou */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  color: white;
+  text-align: center;
 }
 
-.card-header {
-  border-radius: 10px 10px 0 0;
+/* Champs du formulaire */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  font-weight: 600;
+  display: block;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 5px;
+  color: black;
+}
+
+/* Bouton d'inscription */
+.btn-primary {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  color: white;
+  margin-top: 10px;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+}
+
+/* Message d'erreur */
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Lien de connexion */
+.login-link {
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+.login-link a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
 }

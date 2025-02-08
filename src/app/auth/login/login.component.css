@@ -1,13 +1,74 @@
-.input-smaller {
-  height: 40px;
-  font-size: 14px;
+/* Image de fond en plein écran */
+.login-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url('/assets/salle.webp') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.card {
-  max-width: 400px;
-  border-radius: 10px;
+/* Effet sombre sur l'image */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Ajuste l’opacité */
 }
 
-.card-header {
-  border-radius: 10px 10px 0 0;
+/* Carte de connexion */
+.login-card {
+  position: relative;
+  width: 450px; /* Augmenté de 350px à 450px */
+  padding: 30px; /* Augmenté pour plus d'espace */
+  border-radius: 15px; /* Arrondi plus doux */
+  background: rgba(255, 255, 255, 0.25); /* Légèrement plus opaque */
+  backdrop-filter: blur(12px); /* Effet de flou amélioré */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  color: white;
 }
+
+/* Champs du formulaire */
+.form-control {
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 12px; /* Augmenté pour un meilleur confort */
+  border-radius: 8px;
+  font-size: 16px;
+  color: black;
+}
+
+/* 🎨 Bouton */
+.btn-primary {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  color: white;
+  margin-top: 10px;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+}
+
+.register-link {
+  margin-top: 15px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.register-link a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+

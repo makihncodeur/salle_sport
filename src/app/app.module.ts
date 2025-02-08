@@ -12,7 +12,10 @@ import { SouscriptionGestionComponent } from './souscription-gestion/souscriptio
 import { StatistiqueComponent } from './statistique/statistique.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MatIconModule } from '@angular/material/icon';
+import { AuthComponent } from './auth/auth.component';
+
 import { provideHttpClient, withFetch } from '@angular/common/http'; // ✅ Plus besoin de HttpClientModule
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,7 @@ import { provideHttpClient, withFetch } from '@angular/common/http'; // ✅ Plus
     SouscriptionGestionComponent,
     StatistiqueComponent,
     SidebarComponent
+
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,8 @@ import { provideHttpClient, withFetch } from '@angular/common/http'; // ✅ Plus
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+
   ],
   providers: [
     provideClientHydration(),

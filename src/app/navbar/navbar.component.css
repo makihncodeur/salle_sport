@@ -35,7 +35,8 @@
   font-size: 24px;
   cursor: pointer;
   color: white;
-  display: none; /* Optional, will display on mobile screens */
+  margin-right: 900px;
+   /* Optional, will display on mobile screens */
 }
 
 /* 📱 Search Bar */
@@ -105,12 +106,6 @@
     text-align: center;
   }
 
-  .toggle-sidebar-btn {
-    display: block;
-    color: white;
-    font-size: 30px;
-    margin-top: 10px;
-  }
 
   .search-bar {
     margin-top: 10px;

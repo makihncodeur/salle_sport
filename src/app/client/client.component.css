@@ -1,8 +1,11 @@
 /* Style global */
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  margin-left: 320px;
+  margin-top: 40px; /* Push the content right so it doesn’t overlap with the sidebar */
+  flex: 1; /* Fill up the remaining space */
+  padding: 50px;
+  overflow-y: auto;
+
 }
 .card-header {
   background-color: #1e3a8a ;  /* Remplace cette couleur par celle de ta navbar */
@@ -99,6 +102,42 @@
 
 .form-check-input {
   margin-right: 5px;
+}
+
+app-navbar {
+  z-index: 1000; /* Keep navbar above other content */
+  position: relative;
+}
+
+/* Main content area */
+.app-content {
+  display: flex;
+  height: 100%; /* Take full remaining height */
+}
+
+/* Sidebar positioning */
+app-sidebar {
+  width: 250px; /* Sidebar width */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%; /* Full height */
+  background-color: #f3f4f6;
+  z-index: 500; /* Keep sidebar below navbar */
+}
+@media (max-width: 768px) {
+  app-sidebar {
+    display: none; /* Slightly smaller sidebar on mobile */
+  }
+
+}
+.content-area {
+  margin-left: 260px; /* Ajuste selon la largeur de app-sidebar */
+  margin-top: 40px;
+  flex: 1;
+  padding: 15px; /* Ajoute un peu d'espace intérieur */
+  width: 200px; /* Ajuste dynamiquement */
+  overflow-y: auto;
 }
 
 

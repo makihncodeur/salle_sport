@@ -14,13 +14,14 @@ import { ProfileComponent } from './profile/profile.component';
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
-    AuthComponent
+
   ],
   imports: [
     CommonModule,
     FormsModule,
     AuthRoutingModule,
     ReactiveFormsModule
-  ]
+  ],
+  exports: [LoginComponent, RegisterComponent]
 })
 export class AuthModule { }

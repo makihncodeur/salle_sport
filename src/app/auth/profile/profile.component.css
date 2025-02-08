@@ -1,0 +1,102 @@
+/* 🌟 Image de fond en plein écran */
+.profile-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url('/assets/salle.webp') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🕶️ Effet sombre */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* 🏷️ Carte du profil */
+.profile-card {
+  position: relative;
+  width: 400px;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  color: white;
+  text-align: center;
+}
+
+/* 🎭 En-tête */
+.profile-header {
+  background: rgba(0, 123, 255, 0.8);
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* 📸 Avatar */
+.avatar-container {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+/* 📋 Informations utilisateur */
+.profile-body p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+/* 🛠️ Champs de formulaire */
+.form-control {
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  color: black;
+}
+
+/* 🎨 Boutons */
+.btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ✅ Bouton Modifier */
+.btn-update {
+  background: #007bff;
+  color: white;
+  border: none;
+}
+
+.btn-update:hover {
+  background: #0056b3;
+}
+
+/* ❌ Bouton Supprimer */
+.btn-delete {
+  background: #dc3545;
+  color: white;
+  border: none;
+}
+
+.btn-delete:hover {
+  background: #a71d2a;
+}

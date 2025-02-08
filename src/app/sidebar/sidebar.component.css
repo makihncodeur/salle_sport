@@ -1,13 +1,11 @@
 /* 🌟 Sidebar Styles */
-#sidebar {
+.sidebar {
   background-color: #1e3a8a; /* Light gray background */
   color: #1f2937; /* Dark gray text */
   width: 270px; /* Fixed sidebar width */
   height: 100vh; /* Full height */
-
-  display: flex;
-    flex-direction: column;
-  transition: all 0.3s ease; /* Smooth transition for hover and active states */
+ 
+  transition: transform 0.3s ease-in-out; /* Smooth transition for hover and active states */
 
 }
 
@@ -75,12 +73,31 @@
   color: white;  /* Couleur au survol */
 }
 
+.mobile-toggle-btn {
+   /* Masquer par défaut */
+  position: fixed;
 
+  z-index: 1001; /* Assurez-vous que le bouton est au-dessus de la sidebar */
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
 
+}
+
+/* Afficher le bouton en mode mobile */
 @media (max-width: 768px) {
-  #sidebar {
-    display: none;
+  .mobile-toggle-btn {
+    display: block;
   }
 
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.hidden {
+    transform: translateX(0);
+
+  }
 
 }

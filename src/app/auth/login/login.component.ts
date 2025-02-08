@@ -16,7 +16,7 @@ export class LoginComponent {
 
   onSubmit(): void {
     if (this.authService.login(this.email, this.password)) {
-      this.router.navigate(['/']);
+      this.router.navigate(['/clients']);
     } else {
       this.errorMessage = 'Email ou mot de passe incorrect.';
     }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
 @Component({
@@ -8,7 +8,11 @@ import { AuthService } from '../auth/auth.service';
 })
 export class NavbarComponent {
   constructor(private authService: AuthService, private router: Router) {}
+  @Output() toggleSidebarEvent = new EventEmitter<void>(); // Événement pour la sidebar
 
+  toggleSidebar() {
+    this.toggleSidebarEvent.emit(); // Émettre un signal au parent
+  }
   // Vérifie si l'utilisateur est connecté
   isLoggedIn(): boolean {
     return this.authService.isLoggedIn();

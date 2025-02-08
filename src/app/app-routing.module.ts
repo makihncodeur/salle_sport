@@ -13,12 +13,12 @@ const routes: Routes = [
   { path: 'offres', component: OffreComponent },
   { path: 'souscriptions', component: SouscriptionGestionComponent },
   { path: 'statistiques', component: StatistiqueComponent },
-  { path: '', redirectTo: '/clients', pathMatch: 'full' },
+  { path: '', redirectTo: '/auth/login', pathMatch: 'full' },
   { path: 'auth/login', component: LoginComponent },
   { path: 'auth/register', component: RegisterComponent },
   { path: 'auth/profile', component: ProfileComponent },
   { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
-  { path: '**', redirectTo: '/clients' }
+  { path: '**', redirectTo: '/auth/login' }
 ];
 
 @NgModule({
